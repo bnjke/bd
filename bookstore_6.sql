@@ -75,7 +75,7 @@ inner join dbo.Publishing_House on Book.publishing_houseID = Publishing_House.ID
 create unique clustered index Book_release_index on Book_release (first_name)
 
 select * from Book_release
-where  first_name = 'Кинг'
+where  first_name = 'Оруэлл'
 
 drop index Book_release_index on Book_release
 
