@@ -25,19 +25,19 @@ select Writing.title, Genre.name
 
 select Writing.title, Writing.year_of_writing
 	from Writing inner join Writing t2
-		on Writing.year_of_writing < 1900
+		on Writing.year_of_writing < 1950
 
 -------------------------------------------------------------------------------
 --2
 
 select *
-	from Writing where Writing.authorID = 1
+	from Writing where Writing.authorID = 2
 		union 
 select *
 	from Writing where Writing.genreID = 4
 
 select *
-	from Writing where Writing.authorID = 1
+	from Writing where Writing.authorID = 2
 		union all
 select *
 	from Writing where Writing.genreID = 4
@@ -114,11 +114,6 @@ select Genre.name,
 
 select nullif (3000, edition)
 	from Book
-
-select coalesce (iif(ID = 7 or ID = 3, 'Книги такого жанра нет', 
-	choose(ID, 'Десять негритят', 'Гарри Поттер и философский камень', 'Мастер и Маргарита', 'Как писать книги', 'Ревизор')), 'нет такого жанра') as rrr
-	from Genre
-
 
 -------------------------------------------------------------------------------
 --6
