@@ -1,4 +1,4 @@
-  --CREATE
+  --Создание таблицы
 
 CREATE TABLE [Author] (
   [ID] int IDENTITY(1, 1) NOT NULL PRIMARY KEY,
@@ -124,8 +124,7 @@ CREATE TABLE [Books_in_Cheque] (
 GO
 
 
--------------------------------------------------------------------------------
---ALTER
+---добавление связей
 
 ALTER TABLE [Writing] ADD FOREIGN KEY ([authorID]) REFERENCES [Author] ([ID])
 GO
@@ -176,8 +175,7 @@ ALTER TABLE [Books_in_Cheque] ADD FOREIGN KEY ([chequeID]) REFERENCES [Cheque] (
 GO
 
 
--------------------------------------------------------------------------------
---INSERT
+--Вставка данных
 
 INSERT INTO [Author]
 	   VALUES
@@ -354,8 +352,7 @@ select * from Cheque
 select * from Books_in_Cheque
 
 
--------------------------------------------------------------------------------
---DELETE and DELETE WHERE
+--Удаление из таблицы
 
 delete Books_in_Cheque
 
