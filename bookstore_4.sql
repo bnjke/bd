@@ -39,7 +39,7 @@ select *
 	from Book
 	where ID >= 133
 
----кластерный индекс---
+---кластеризованный индекс---
 create clustered index ix_ID on book (ID)
 
 select *
@@ -49,7 +49,7 @@ where ID = 333
 drop index ix_ID on book
 
 
----некластерный составной индекс---
+---некластеризованный составной индекс---
 create index ix_book_name_surname on Book (year_of_printing, edition)
 
 select year_of_printing, edition
@@ -58,7 +58,7 @@ where year_of_printing = 2005 and edition > 3000
 
 drop index ix_book_name_surname on Book 
 
----некластерный покрывающий индекс---
+---некластеризованный покрывающий индекс---
 create index ix_book_ID_all on Book (publishing_houseID)
 include(ID, ISBN, year_of_printing, selling_price)
 
@@ -68,7 +68,7 @@ where publishing_houseID = 331;
 
 drop index ix_book_ID_all on Book 
 
----некластерный уникальный индекс--- 
+---некластеризованный уникальный индекс--- 
 create unique index ux_book_ID on Book (ID)
 
 select *
@@ -77,7 +77,7 @@ where ID = 13
 
 drop index ux_book_ID on Book
 
---- некластерный индeкс с включеными столбцами---
+--- некластеризованный индeкс с включеными столбцами---
 
 create index ix_book_ISBN on Book (ISBN)
 include(ID, writingID, publishing_houseID, year_of_printing)
@@ -88,7 +88,7 @@ where ISBN = '978-5-51-503315-6'
 
 drop index ix_book_ISBN on Book
 
----некластерный отфильтрованный индекс---
+---некластеризованный отфильтрованный индекс---
 
 create index ix_book_year_of_printing on Book (year_of_printing)
 where year_of_printing > 2019;
