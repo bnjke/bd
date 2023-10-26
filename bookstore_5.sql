@@ -90,7 +90,7 @@ select ID, 'Пользователь ' + first_name + ', логин: ' + login +
 from deleted
 
 delete from Shopper
-where Shopper.first_name = 'Валерий'
+where Shopper.first_name = 'Антон'
 
 select * from System_data
 
