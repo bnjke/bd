@@ -359,13 +359,14 @@ delete Books_in_Cheque
 INSERT INTO[Books_in_Cheque]
 VALUES
 (1, 1, 1, 2),
-(NULL, 2, 1, 2),
-(10, 3, 2, 1),
-(8, 4, 3, 1),
-(NULL, 5, 3, 2),
-(3, 2, 4, 1),
-(9, 6, 5, 3),
-(NULL, 10, 1, 2);
+(4, 5, 1, 2),
+(10, 8, 2, 1),
+(NULL, 4, 3, 1),
+(NULL, 2, 3, 1),
+(NULL, 9, 4, 1),
+(9, 6, 5, 1),
+(15, 10, 5, 1);
+
 
 select * from Books_in_Cheque
 
@@ -375,13 +376,13 @@ select * from Books_in_Cheque
 INSERT INTO[Books_in_Cheque]
 VALUES
 (1, 1, 1, 2),
-(NULL, 2, 1, 2),
-(10, 3, 2, 1),
-(8, 4, 3, 1),
-(NULL, 5, 3, 2),
-(3, 2, 4, 1),
-(9, 6, 5, 3),
-(NULL, 10, 1, 2);
+(4, 5, 1, 2),
+(10, 8, 2, 1),
+(NULL, 4, 3, 1),
+(NULL, 2, 3, 1),
+(NULL, 9, 4, 1),
+(9, 6, 5, 1),
+(15, 10, 5, 1);
 
 delete Books_in_Cheque where bookID = 3 or quantity = 2
 select * from Books_in_Cheque
